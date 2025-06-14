@@ -74,6 +74,11 @@ const VideoCarousel = () => {
     return () => clearInterval(interval);
   }, [currentVideoIndex]);
   
+  // Ref callback to store video elements
+  const setVideoRef = (el: HTMLVideoElement | null, index: number) => {
+    videoRefs.current[index] = el;
+  };
+  
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
       {/* Enhanced dark overlay with more coverage to cover text area */}
@@ -93,7 +98,7 @@ const VideoCarousel = () => {
           }`}
         >
           <video
-            ref={el => videoRefs.current[index] = el}
+            ref={(el) => setVideoRef(el, index)}
             className="w-full h-full object-cover"
             autoPlay={index === 0}
             muted

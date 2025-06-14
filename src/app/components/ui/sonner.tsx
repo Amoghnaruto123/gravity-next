@@ -10,7 +10,7 @@ export function Toaster({ ...props }: ToasterProps) {
 
   return (
     <Sonner
-      theme={resolvedTheme}
+      theme={resolvedTheme as "system" | "dark" | "light"}
       className="toaster group"
       toastOptions={{
         classNames: {

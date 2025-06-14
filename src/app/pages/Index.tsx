@@ -8,7 +8,7 @@ import { Textarea } from "@/app/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/app/components/ui/select";
 import { Button } from "@/app/components/ui/button";
 import { useForm } from "react-hook-form";
-import { toast } from "@/app/components/ui/use-toast";
+import { toast } from "sonner";
 import { Toaster } from "@/app/components/ui/toaster";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/app/components/ui/sheet";
 
@@ -68,8 +68,7 @@ const Index = () => {
       );
 
       // Show toast and close popup
-      toast({
-        title: "Booking Confirmed!",
+      toast("Booking Confirmed!", {
         description: "Thank you for your interest. We'll contact you within 24 hours to schedule your call.",
       });
 
@@ -82,8 +81,7 @@ const Index = () => {
       }, 1500);
     } catch (error: any) {
       console.error("Error submitting form:", error);
-      toast({
-        title: "Submission Failed",
+      toast("Submission Failed", {
         description: "Something went wrong. Please try again.",
       });
     }
