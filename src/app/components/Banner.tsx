@@ -12,10 +12,7 @@ const Banner = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
-  // For the typewriter effect
-  const [displayText, setDisplayText] = useState('Join us at ');
-  const [isTyping, setIsTyping] = useState(true);
-  const fullText = 'JOIN UTKARSH CUSTOMER MEET ON 20th JUNE 2025';
+
 
   // Measure banner height when mounted
   useEffect(() => {
@@ -48,7 +45,7 @@ const Banner = () => {
         resizeObserver.disconnect();
       }
     };
-  }, [isVisible, isTransitioning, displayText]);
+  }, [isVisible, isTransitioning]);
 
   // Handle dismissal with improved transition
   const handleDismiss = () => {
@@ -64,24 +61,6 @@ const Banner = () => {
       setIsTransitioning(false);
     }, 300); // Match the transition duration (300ms)
   };
-
-  // Typewriter effect - start after the component is mounted
-  useEffect(() => {
-    let i = 0;
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setDisplayText(fullText.substring(0, i + 1));
-        i++;
-      } else {
-        clearInterval(typingInterval);
-        setIsTyping(false);
-      }
-    }, 50);
-
-    return () => {
-      clearInterval(typingInterval);
-    };
-  }, []);
 
   // Listen for mobile menu state changes
   useEffect(() => {
@@ -104,21 +83,6 @@ const Banner = () => {
     return null;
   }
 
-  // Helper function to highlight UTKARSH in the text
-  const renderHighlightedText = () => {
-    const parts = displayText.split('UTKARSH');
-    if (parts.length === 1) {
-      return <span>{displayText}</span>;
-    }
-    
-    return (
-      <>
-        {parts[0]}
-        <span className="font-bold">UTKARSH</span>
-        {parts[1]}
-      </>
-    );
-  };
 
   return (
     <>
@@ -127,6 +91,8 @@ const Banner = () => {
           ref={bannerRef}
           className="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-600 via-blue-500 to-red-500 text-white py-2 md:py-3 z-50"
           style={{
+            paddingTop: '0.4rem',
+            paddingBottom: '0.4rem',
             height: isTransitioning ? '0' : 'auto',
             opacity: isTransitioning ? 0 : 1,
             overflow: 'hidden',
@@ -149,10 +115,8 @@ const Banner = () => {
             {/* Desktop view */}
             <div className="hidden md:flex justify-center items-center">
               <div className="inline-flex items-center">
-                <div className="text-base font-medium whitespace-nowrap">
-                  {renderHighlightedText()}
-                  {isTyping && <span className="inline-block w-[4px] h-5 ml-1 bg-white animate-pulse"></span>}
-                  {!isTyping && <span className="inline-block w-[4px] h-5 ml-1 bg-white animate-blinking-cursor"></span>}
+                <div className="text-sm md:text-base font-medium whitespace-nowrap">
+                  <span className="font-bold">UTKARSH</span>CUSTOMER MEET ON 20TH JUNE 2025
                 </div>
               </div>
             </div>
@@ -161,9 +125,7 @@ const Banner = () => {
             <div className="md:hidden flex justify-center items-center">
               <div className="flex flex-wrap justify-center text-center">
                 <div className="w-full text-sm font-medium">
-                  {renderHighlightedText()}
-                  {isTyping && <span className="inline-block w-[3px] h-4 ml-1 bg-white animate-pulse"></span>}
-                  {!isTyping && <span className="inline-block w-[3px] h-4 ml-1 bg-white animate-blinking-cursor"></span>}
+                  <span className="font-bold">UTKARSH</span>CUSTOMER MEET ON 20TH JUNE 2025
                 </div>
               </div>
             </div>

@@ -16,10 +16,10 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
   const [showCursor, setShowCursor] = useState(true);
   
   const words = ["SMART", "STABLE", "SCALABLE"];
-  const typingSpeed = 150;
+  const typingSpeed = 200;
   const deletingSpeed = 100;
   const pauseBeforeDelete = 1500;
-  const pauseBeforeNextWord = 500;
+  const pauseBeforeNextWord = 400;
   
   // Blinking cursor effect
   useEffect(() => {
@@ -133,7 +133,7 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
         <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center h-[600px]">
           <div className="max-w-2xl animate-fade-in pl-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
-              <div>
+              <div className="flex items-center">
                 <span className="text-orange-500">{displayText}</span>
                 <span className={`text-orange-500 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
               </div>
