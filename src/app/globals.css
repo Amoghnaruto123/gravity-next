@@ -170,6 +170,30 @@ body {
   }
 }
 
+@keyframes scrollText {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -193,6 +217,20 @@ body {
 
 .animate-blinking-cursor {
   animation: blinking-cursor 0.7s infinite;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+  padding-right: 50px;
+}
+
+.scrolling-text-mobile {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite;
+  padding-right: 50px;
 }
 
 #root {

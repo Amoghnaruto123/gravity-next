@@ -424,7 +424,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Product Categories</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Product Categories</h3>
               <div className="grid grid-cols-3 gap-6">
                 {productCategories.map((category, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
@@ -437,7 +437,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             
             {/* Right Column - Featured */}
             <div className="col-span-1">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Featured</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Featured</h3>
               <div className="bg-blue-50 rounded-lg p-5">
                 <h4 className="font-medium text-blue-800 mb-2">New Products</h4>
                 <p className="text-sm text-gray-700 mb-4">Explore our latest product offerings for enterprise infrastructure.</p>
@@ -459,7 +459,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Service Categories</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Service Categories</h3>
               <div className="grid grid-cols-3 gap-6">
                 {serviceCategories.map((category, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
@@ -472,7 +472,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             
             {/* Right Column - Featured */}
             <div className="col-span-1">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Featured</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Featured</h3>
               <div className="bg-blue-50 rounded-lg p-5">
                 <h4 className="font-medium text-blue-800 mb-2">Service Plans</h4>
                 <p className="text-sm text-gray-700 mb-4">Discover our customizable service plans for enterprise infrastructure.</p>
@@ -494,7 +494,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Solution Categories</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Solution Categories</h3>
               <div className="grid grid-cols-3 gap-6">
                 {solutionCategories.map((category, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
@@ -507,7 +507,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             
             {/* Right Column - Featured */}
             <div className="col-span-1">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Featured</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Featured</h3>
               <div className="bg-blue-50 rounded-lg p-5">
                 <h4 className="font-medium text-blue-800 mb-2">Turnkey Solutions</h4>
                 <p className="text-sm text-gray-700 mb-4">Explore our end-to-end infrastructure solutions for your business.</p>
@@ -529,7 +529,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Company Information</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Company Information</h3>
               <div className="grid grid-cols-3 gap-6">
                 {companyCategories.map((category, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
@@ -542,7 +542,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             
             {/* Right Column - Featured */}
             <div className="col-span-1">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase mb-4">Featured</h3>
+              <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Featured</h3>
               <div className="bg-blue-50 rounded-lg p-5">
                 <h4 className="font-medium text-blue-800 mb-2">Sustainability</h4>
                 <p className="text-sm text-gray-700 mb-4">Learn about our commitment to sustainable practices and green initiatives.</p>

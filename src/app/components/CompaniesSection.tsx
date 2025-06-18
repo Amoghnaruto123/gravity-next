@@ -76,8 +76,8 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="font-semibold text-gray-900 text-lg sm:text-xl animate-fade-in">
-            Partnering with industry leaders across India
+          <h2 className="font-semibold text-gray-400 text-lg sm:text-xl animate-fade-in">
+           
           </h2>
         </div>
 

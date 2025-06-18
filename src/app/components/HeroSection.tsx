@@ -3,7 +3,8 @@
 import { Button } from "@/app/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import VideoCarousel from "./VideoCarousel";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { useIsMobile } from "@/app/hooks/use-mobile";
 
 interface HeroSectionProps {
   openBookCallDialog: () => void;
@@ -14,6 +15,7 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
   const [bannerHeight, setBannerHeight] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const isMobile = useIsMobile();
   
   const words = ["SMART", "STABLE", "SCALABLE"];
   const typingSpeed = 200;
@@ -131,7 +133,7 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
       {/* Content overlay */}
       <div className="relative z-20 w-full">
         <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center h-[600px]">
-          <div className="max-w-2xl animate-fade-in pl-20">
+          <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'}`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
               <div className="flex items-center">
                 <span className="text-orange-500">{displayText}</span>

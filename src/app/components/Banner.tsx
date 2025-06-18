@@ -83,7 +83,6 @@ const Banner = () => {
     return null;
   }
 
-
   return (
     <>
       {isVisible && (
@@ -91,8 +90,8 @@ const Banner = () => {
           ref={bannerRef}
           className="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-600 via-blue-500 to-red-500 text-white py-2 md:py-3 z-50"
           style={{
-            paddingTop: '0.4rem',
-            paddingBottom: '0.4rem',
+            paddingTop: '0.6rem',
+            paddingBottom: '0.6rem',
             height: isTransitioning ? '0' : 'auto',
             opacity: isTransitioning ? 0 : 1,
             overflow: 'hidden',
@@ -110,23 +109,19 @@ const Banner = () => {
             <X className="h-4 w-4 md:h-5 md:w-5" />
           </button>
 
-          {/* Main content container with padding to ensure space for the button */}
-          <div className="max-w-7xl mx-auto px-3 pr-10 md:px-4 md:pr-12">
+          {/* Main content container with full width */}
+          <div className="w-full overflow-hidden">
             {/* Desktop view */}
-            <div className="hidden md:flex justify-center items-center">
-              <div className="inline-flex items-center">
-                <div className="text-sm md:text-base font-medium whitespace-nowrap">
-                  <span className="font-bold">UTKARSH</span>CUSTOMER MEET ON 20TH JUNE 2025
-                </div>
+            <div className="hidden md:block">
+              <div className="scrolling-text">
+                <span className="font-bold">UTKARSH</span> CUSTOMER MEET ON 20TH JUNE 2025 
               </div>
             </div>
             
             {/* Mobile view */}
-            <div className="md:hidden flex justify-center items-center">
-              <div className="flex flex-wrap justify-center text-center">
-                <div className="w-full text-sm font-medium">
-                  <span className="font-bold">UTKARSH</span>CUSTOMER MEET ON 20TH JUNE 2025
-                </div>
+            <div className="md:hidden">
+              <div className="scrolling-text-mobile">
+                <span className="font-bold">UTKARSH</span> CUSTOMER MEET ON 20TH JUNE 2025 
               </div>
             </div>
           </div>
