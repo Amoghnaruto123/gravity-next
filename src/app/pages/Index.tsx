@@ -18,6 +18,10 @@ import Banner from "../components/Banner";
 import HeroSection from "../components/HeroSection";
 import CompaniesSection from "../components/CompaniesSection";
 import Footer from "../components/Footer";
+import ProductsBentoSection from "../components/ProductsBentoSection";
+import SolutionsBentoSection from "../components/SolutionsBentoSection";
+import ServicesBentoSection from "../components/ServicesBentoSection";
+import TestimonialsBentoSection from "../components/TestimonialsBentoSection";
 import { DialogOverlay } from '@radix-ui/react-dialog';
 import { CheckIcon, Phone, Mail } from 'lucide-react';
 
@@ -165,16 +169,17 @@ const Index = () => {
       {/* Companies Section with scrolling logos */}
       <CompaniesSection companies={companies} />
       
-      {/* Technology infrastructure section */}
-      <section className="py-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Technology infrastructure solutions from edge to cloud</h2>
-          <div className="flex justify-center gap-4 mb-8">
-            <span className="text-orange-500 font-medium border-r pr-4 border-gray-300">Offerings</span>
-            <span className="text-gray-600">Industries</span>
-          </div>
-        </div>
-      </section>
+      {/* Products Bento Grid Section */}
+      <ProductsBentoSection />
+      
+      {/* Solutions Bento Grid Section */}
+      <SolutionsBentoSection />
+      
+      {/* Services Bento Grid Section */}
+      <ServicesBentoSection />
+      
+      {/* Testimonials Section */}
+      <TestimonialsBentoSection />
       
       {/* Footer */}
       <Footer />
