@@ -141,46 +141,42 @@ const Index = () => {
       {/* Get in touch section */}
       <section className="bg-gray-100 py-6">
         <div className="w-full">
-          <div className="relative max-w-[1920px] mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center w-full">
+          <div className="relative max-w-[1920px] mx-auto px-4 md:px-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full space-y-4 md:space-y-0">
               {/* Left Text Block - Extreme Left */}
-              <div className="flex-shrink-0 md:pl-0">
-                <h3 className="text-2xl font-bold text-gray-800">Get sales and product support</h3>
-                <p className="text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
+              <div className="flex-shrink-0">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800">Get sales and product support</h3>
+                <p className="text-sm md:text-base text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
               </div>
 
-              {/* Vertical Separator */}
+              {/* Vertical Separator - Desktop Only */}
               <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
 
               {/* Center Block */}
-              <div className="mt-4 md:mt-0 flex-shrink-0">
+              <div className="flex-shrink-0">
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-xl font-bold text-gray-800">1800 209 6070</span>
+                  <Phone className="h-5 w-5 text-blue-600 mr-2" />
+                  <span className="text-lg md:text-xl font-bold text-gray-800">1800 209 6070</span>
                 </div>
-                <p className="text-sm text-gray-500 pl-8">Call us for inquiries, demo bookings or customer support assistance.</p>
+                <p className="text-xs md:text-sm text-gray-500 pl-7">Call us for inquiries or support</p>
               </div>
 
-              {/* Vertical Separator */}
+              {/* Vertical Separator - Desktop Only */}
               <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
 
               {/* Email Buttons - Extreme Right */}
-              <div className="mt-4 md:mt-0 md:pr-0">
-                <div className="flex flex-col md:flex-col gap-2">
-                  {/* Buttons Row */}
-                  <div className="flex flex-col md:flex-row gap-2">
-                    <Button variant="default" size="sm" className="flex-1 md:w-auto bg-blue-600 hover:bg-blue-700 text-white">
-                      📩 Email Sales
-                    </Button>
-                    <Button variant="default" size="sm" className="flex-1 md:w-auto bg-gray-700 hover:bg-gray-800 text-white">
-                      🛠️ Email Support
-                    </Button>
-                  </div>
-                  {/* Descriptions Row */}
-                  <div className="grid grid-cols-2 gap-2 text-xs text-gray-500">
-                    <p className="text-center">For pricing and demos</p>
-                    <p className="text-center">For technical support</p>
-                  </div>
+              <div className="w-full md:w-auto">
+                <div className="flex flex-row gap-2 justify-start">
+                  <Button variant="default" size="sm" className="flex-1 md:flex-none bg-blue-600 hover:bg-blue-700 text-white text-sm">
+                    📩 Email Sales
+                  </Button>
+                  <Button variant="default" size="sm" className="flex-1 md:flex-none bg-gray-700 hover:bg-gray-800 text-white text-sm">
+                    🛠️ Email Support
+                  </Button>
+                </div>
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>For pricing and demos</span>
+                  <span>For technical support</span>
                 </div>
               </div>
             </div>

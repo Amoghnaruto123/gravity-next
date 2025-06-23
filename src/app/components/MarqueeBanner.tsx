@@ -16,7 +16,13 @@ const MarqueeBanner = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-600 via-blue-500 to-red-500 overflow-hidden py-2 md:py-3 z-50">
+    <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-600 via-blue-500 to-red-500 overflow-hidden py-2 md:py-3 z-50"
+         style={{
+           transform: 'translateZ(0)',
+           backfaceVisibility: 'hidden',
+           WebkitBackfaceVisibility: 'hidden',
+           transition: 'transform 0.3s ease'
+         }}>
       {/* Close button */}
       <button 
         onClick={() => setIsVisible(false)} 
