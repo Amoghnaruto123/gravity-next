@@ -49,6 +49,20 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        'marquee-x': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
+        },
+        'marquee-x-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' }
+        }
+      },
+      animation: {
+        'marquee-x': 'marquee-x 15s linear infinite',
+        'marquee-x-mobile': 'marquee-x 10s linear infinite'
+      }
     },
   },
   plugins: [

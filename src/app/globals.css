@@ -6,6 +6,8 @@
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
   --border: 214.3 31.8% 91.4%;
+  --banner-height: 44px;
+  --banner-visible: 1;
 }
 
 .dark {
@@ -21,6 +23,12 @@ body {
 
 * {
   border-color: hsl(var(--border));
+}
+
+/* Adjust main content to account for sticky banner */
+main {
+  padding-top: calc(80px + (var(--banner-height) * var(--banner-visible)));
+  transition: padding-top 0.3s ease;
 }
 
 @layer base {
@@ -191,6 +199,7 @@ body {
   display: inline-block;
   min-width: 100%;
   animation: marquee 15s linear infinite;
+  animation: marquee linear infinite;
 }
 
 

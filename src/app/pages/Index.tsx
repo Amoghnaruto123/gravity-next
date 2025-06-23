@@ -14,7 +14,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/app/components/u
 
 import VideoCarousel from "../components/VideoCarousel";
 import Navigation from "../components/Navigation";
-import Banner from "../components/Banner";
 import HeroSection from "../components/HeroSection";
 import CompaniesSection from "../components/CompaniesSection";
 import Footer from "../components/Footer";
@@ -127,9 +126,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner */}
-      <Banner />
-      
       {/* Navigation */}
       <Navigation 
         isDialogOpen={isDialogOpen} 
@@ -140,32 +136,34 @@ const Index = () => {
       
       {/* Hero Section */}
       <HeroSection openBookCallDialog={() => setIsDialogOpen(true)} />
-      
+
       {/* Get in touch section */}
       <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex flex-col">
-              <h3 className="text-xl font-semibold mb-2">Get sales and product support:</h3>
-              <p className="text-gray-600">Available 9:00 AM - 6:00 PM, Mon - Sat</p>
-            </div>
-            
-            <div className="flex items-center">
-              <Phone className="h-6 w-6 text-orange-500 mr-2" />
-              <span className="text-2xl font-bold">1800 209 6070</span>
-            </div>
-            
-            <Button 
-              onClick={() => setIsDialogOpen(true)}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md flex items-center gap-2"
-            >
-              <Mail className="h-5 w-5" />
-              Get in touch
-            </Button>
-          </div>
-        </div>
-      </section>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="flex flex-col">
+        <h3 className="text-xl font-semibold mb-2">Get sales and product support:</h3>
+        <p className="text-gray-600">Available 9:00 AM - 6:00 PM, Mon - Sat</p>
+      </div>
       
+      <div className="flex items-center">
+        <Phone className="h-6 w-6 text-blue-600 mr-2" />
+        <span className="text-2xl font-bold">1800 209 6070</span>
+      </div>
+      
+      <Button 
+        onClick={() => setIsDialogOpen(true)}
+        className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md flex items-center gap-2"
+      >
+        <Mail className="h-5 w-5" />
+        Get in touch
+      </Button>
+    </div>
+  </div>
+</section>
+
+
+
       {/* Companies Section with scrolling logos */}
       <CompaniesSection companies={companies} />
       

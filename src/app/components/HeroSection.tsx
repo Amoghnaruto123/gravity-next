@@ -117,7 +117,7 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
     <section 
       className="relative overflow-hidden flex"
       style={{ 
-        paddingTop: `calc(96px + ${bannerHeight}px)`, // 24px * 4 = 96px (pt-24) + banner height
+        paddingTop: `80px`, // Fixed height for navigation
         transition: 'padding-top 0.3s ease', // Smooth transition when banner height changes
       }}
     >
@@ -136,23 +136,23 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
           <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'}`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
               <div className="flex items-center">
-                <span className="text-orange-500">{displayText}</span>
-                <span className={`text-orange-500 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
+                <span className="text-blue-600">{displayText}</span>
+                <span className={`text-blue-600 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
               </div>
-              <div>Infrastructure for modern industries</div>
+              <div>INFRASTRUCTURE FOR MODERN INDUSTRIES</div>
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               30+ Years of Expertise in Power Management, Infrastructure Development, and Auditing Services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                className="bg-orange-500 hover:bg-orange-600 text-white border-none px-6 py-2 h-11 font-medium w-fit"
+                className="bg-blue-600 hover:bg-blue-900 text-white border-none px-6 py-2 h-11 font-medium w-fit"
                 onClick={openBookCallDialog}
               >
                 Book a Callback
               </Button>
               <Button 
-                className="bg-transparent border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white px-6 py-2 h-11 font-medium w-fit transition-colors"
+                className="bg-transparent border border-blue-400 text-blue-600 hover:bg-blue-400 hover:text-white px-6 py-2 h-11 font-medium w-fit transition-colors"
               >
                 Learn More <ArrowRight className="ml-1 h-4 w-4" />
               </Button>

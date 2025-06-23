@@ -151,7 +151,8 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
   }, []);
 
   return (
-    <nav className={`fixed top-[var(--banner-height,0px)] w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white shadow-sm'}`}>
+    <nav className={`fixed w-full z-30 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white shadow-sm'}`} 
+         style={{ top: `calc(var(--banner-height) * var(--banner-visible))` }}>
       <div className="w-fullpx-6">
         <div className="realtive flex items-center w-full h-20">
           {/* Logo on left */}

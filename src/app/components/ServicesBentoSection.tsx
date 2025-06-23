@@ -15,7 +15,7 @@ const ServiceCard = ({ title, description, image, features, className, variant =
   if (variant === 'feature') {
     return (
       <div className={`relative h-full rounded-xl overflow-hidden ${className}`}>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 z-10"></div>
         {image && (
           <Image
             src={image}
@@ -25,15 +25,15 @@ const ServiceCard = ({ title, description, image, features, className, variant =
           />
         )}
         <div className="absolute inset-0 z-20 p-6 flex flex-col justify-between">
-          <h3 className="text-xl font-bold text-white">{title}</h3>
+          <h3 className="text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
           <div>
-            <p className="text-sm text-white opacity-90 mb-4">{description}</p>
+            <p className="text-sm text-white opacity-90 mb-4 drop-shadow-md leading-relaxed">{description}</p>
             {features && features.length > 0 && (
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-white mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-white">{feature}</span>
+                    <CheckCircle className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0 mt-0.5 drop-shadow" />
+                    <span className="text-sm text-white drop-shadow-md">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -88,7 +88,7 @@ const ServicesBentoSection = () => {
     {
       title: "Data Center Design & Build",
       description: "End-to-end data center solutions from concept to deployment.",
-      image: "/lovable-uploads/3ae7a290-b6ec-4a76-95bb-816844190c4e.png",
+      image: "/lovable-uploads/Screenshot (599).png",
       features: [
         "Scalable infrastructure design",
         "Energy efficiency optimization",
