@@ -23,6 +23,7 @@ import ServicesBentoSection from "../components/ServicesBentoSection";
 import TestimonialsBentoSection from "../components/TestimonialsBentoSection";
 import { DialogOverlay } from '@radix-ui/react-dialog';
 import { CheckIcon, Phone, Mail } from 'lucide-react';
+import { Z_VERSION_ERROR } from 'node:zlib';
 
 const Index = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -138,31 +139,54 @@ const Index = () => {
       <HeroSection openBookCallDialog={() => setIsDialogOpen(true)} />
 
       {/* Get in touch section */}
-      <section className="bg-gray-100 py-10">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-      <div className="flex flex-col">
-        <h3 className="text-xl font-semibold mb-2">Get sales and product support:</h3>
-        <p className="text-gray-600">Available 9:00 AM - 6:00 PM, Mon - Sat</p>
-      </div>
-      
-      <div className="flex items-center">
-        <Phone className="h-6 w-6 text-blue-600 mr-2" />
-        <span className="text-2xl font-bold">1800 209 6070</span>
-      </div>
-      
-      <Button 
-        onClick={() => setIsDialogOpen(true)}
-        className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md flex items-center gap-2"
-      >
-        <Mail className="h-5 w-5" />
-        Get in touch
-      </Button>
-    </div>
-  </div>
-</section>
+      <section className="bg-gray-100 py-6">
+        <div className="w-full">
+          <div className="relative max-w-[1920px] mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-center w-full">
+              {/* Left Text Block - Extreme Left */}
+              <div className="flex-shrink-0 md:pl-0">
+                <h3 className="text-2xl font-bold text-gray-800">Get sales and product support</h3>
+                <p className="text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
+              </div>
 
+              {/* Vertical Separator */}
+              <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
 
+              {/* Center Block */}
+              <div className="mt-4 md:mt-0 flex-shrink-0">
+                <div className="flex items-center">
+                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
+                  <span className="text-xl font-bold text-gray-800">1800 209 6070</span>
+                </div>
+                <p className="text-sm text-gray-500 pl-8">Call us for inquiries, demo bookings or customer support assistance.</p>
+              </div>
+
+              {/* Vertical Separator */}
+              <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
+
+              {/* Email Buttons - Extreme Right */}
+              <div className="mt-4 md:mt-0 md:pr-0">
+                <div className="flex flex-col md:flex-col gap-2">
+                  {/* Buttons Row */}
+                  <div className="flex flex-col md:flex-row gap-2">
+                    <Button variant="default" size="sm" className="flex-1 md:w-auto bg-blue-600 hover:bg-blue-700 text-white">
+                      📩 Email Sales
+                    </Button>
+                    <Button variant="default" size="sm" className="flex-1 md:w-auto bg-gray-700 hover:bg-gray-800 text-white">
+                      🛠️ Email Support
+                    </Button>
+                  </div>
+                  {/* Descriptions Row */}
+                  <div className="grid grid-cols-2 gap-2 text-xs text-gray-500">
+                    <p className="text-center">For pricing and demos</p>
+                    <p className="text-center">For technical support</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Companies Section with scrolling logos */}
       <CompaniesSection companies={companies} />
@@ -185,9 +209,9 @@ const Index = () => {
       {/* Book a Call Dialog */}
       <Sheet open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <SheetContent side="right" className="w-full sm:max-w-xl p-0 overflow-hidden">
-          <div className="flex h-full">
+          <div className="flex flex-col lg:flex-row h-full">
             {/* Left side: Form */}
-            <div className="w-full p-8 bg-white overflow-y-auto">
+            <div className="w-full lg:w-1/3 p-8 bg-white overflow-y-auto border-r border-gray-200">
               <SheetHeader className="mb-6">
                 <SheetTitle className="text-2xl font-bold text-gray-900 mb-2">Book a CallBack</SheetTitle>
                 <p className="text-gray-600">Get expert consultation for your IT infrastructure needs</p>
