@@ -74,7 +74,7 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
       {/* Add the styles to the document */}
       <style dangerouslySetInnerHTML={{ __html: scrollbarHideStyles }} />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="font-semibold text-gray-400 text-lg sm:text-xl animate-fade-in">
            
@@ -82,16 +82,16 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
         </div>
 
         {/* Container with the gradient mask effect */}
-        <div className="relative">
+        <div className="relative w-full">
           {/* Left fade mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none" 
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
             style={{
               background: 'linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0))'
             }}>
           </div>
 
           {/* Right fade mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none" 
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
             style={{
               background: 'linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))'
             }}>
@@ -100,21 +100,26 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
           {/* Scrolling container */}
           <div 
             ref={scrollRef}
-            className="overflow-x-auto py-6 relative logo-scroll-container"
+            className="overflow-x-auto py-6 relative logo-scroll-container w-full"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
-            <div className="flex gap-6 sm:gap-8 whitespace-nowrap">
+            <div className="flex gap-4 sm:gap-6 whitespace-nowrap pl-24 pr-20">
               {/* Duplicate logos for continuous scrolling effect */}
-              {[...companies, ...companies, ...companies].map((company, index) => (
+              {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
                 <div 
                   key={index} 
-                  className="inline-flex flex-shrink-0 w-[180px] h-[100px] items-center justify-center p-2 sm:p-3"
+                  className="inline-flex flex-shrink-0 w-[160px] h-[60px] items-center justify-center"
                 >
                   <div className="w-full h-full flex items-center justify-center hover:scale-105 transition-transform duration-300">
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="h-18 sm:h-20 w-auto object-contain max-w-full"
+                      className="max-h-[100px] w-auto object-contain"
+                      style={{
+                        objectFit: 'contain',
+                        minWidth: '120px',
+                        maxWidth: '140px'
+                      }}
                     />
                   </div>
                 </div>

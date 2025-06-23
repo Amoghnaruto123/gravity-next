@@ -132,8 +132,8 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
 
       {/* Content overlay */}
       <div className="relative z-20 w-full">
-        <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center h-[600px]">
-          <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'}`}>
+        <div className="p-8 pt-0 md:p-12 md:pt-0 lg:p-0 lg:pt-0 flex flex-col justify-center h-[600px]">
+          <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'} -mt-20`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
               <div className="flex items-center">
                 <span className="text-blue-600">{displayText}</span>
@@ -146,15 +146,16 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                className="bg-blue-600 hover:bg-blue-900 text-white border-none px-6 py-2 h-11 font-medium w-fit"
+                className="bg-blue-600 hover:bg-blue-900 text-white border-none px-8 py-2 h-11 font-medium w-[180px] text-base"
                 onClick={openBookCallDialog}
               >
                 Book a Callback
               </Button>
               <Button 
-                className="bg-transparent border border-blue-400 text-blue-600 hover:bg-blue-400 hover:text-white px-6 py-2 h-11 font-medium w-fit transition-colors"
+                className="group bg-transparent border border-white text-white px-8 py-2 h-11 font-medium w-[180px] text-base transition-colors flex items-center justify-center gap-2"
               >
-                Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                Learn More 
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </div>
           </div>

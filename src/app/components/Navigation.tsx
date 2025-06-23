@@ -328,11 +328,15 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'services' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    {serviceCategories.slice(0, 4).map((category, index) => (
-                      <a key={index} href="#" className="bg-white rounded-lg p-3 shadow-sm hover:shadow transition-shadow">
-                        <h4 className="font-medium text-gray-900 text-sm">{category.name}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{category.description}</p>
+                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                    {serviceCategories.map((category, index) => (
+                      <a 
+                        key={index} 
+                        href="#" 
+                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
+                      >
+                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                        <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
                   </div>
@@ -353,11 +357,15 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'solutions' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    {solutionCategories.slice(0, 4).map((category, index) => (
-                      <a key={index} href="#" className="bg-white rounded-lg p-3 shadow-sm hover:shadow transition-shadow">
-                        <h4 className="font-medium text-gray-900 text-sm">{category.name}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{category.description}</p>
+                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                    {solutionCategories.map((category, index) => (
+                      <a 
+                        key={index} 
+                        href="#" 
+                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
+                      >
+                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                        <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
                   </div>
@@ -378,11 +386,15 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'company' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    {companyCategories.slice(0, 4).map((category, index) => (
-                      <a key={index} href="#" className="bg-white rounded-lg p-3 shadow-sm hover:shadow transition-shadow">
-                        <h4 className="font-medium text-gray-900 text-sm">{category.name}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{category.description}</p>
+                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                    {companyCategories.map((category, index) => (
+                      <a 
+                        key={index} 
+                        href="#" 
+                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
+                      >
+                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                        <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
                   </div>
@@ -431,12 +443,12 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
               <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Product Categories</h3>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-x-8 gap-y-6">
                 {productCategories.map((category, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                    <h4 className="font-medium text-gray-900 mb-1">{category.name}</h4>
+                  <a key={index} href="#" className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group">
+                    <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
                     <p className="text-sm text-gray-600">{category.description}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -466,12 +478,12 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
           <div className="grid grid-cols-4 gap-8">
             <div className="col-span-3">
               <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Service Categories</h3>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-x-8 gap-y-6">
                 {serviceCategories.map((category, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                    <h4 className="font-medium text-gray-900 mb-1">{category.name}</h4>
+                  <a key={index} href="#" className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group">
+                    <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
                     <p className="text-sm text-gray-600">{category.description}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

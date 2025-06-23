@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reset any backdrop effects */
+[data-state="open"] > .fixed {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: white !important;
+}
+
+/* Ensure solid background for sheet content */
+[role="dialog"] {
+  background: white !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  transform: translateZ(0) !important;
+  isolation: isolate !important;
+}
+
+/* Force Sheet background */
+.sheet-content {
+  background-color: white !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transform: none !important;
+}
+
+.sheet-content::before,
+.sheet-content::after {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;

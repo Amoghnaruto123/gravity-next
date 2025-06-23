@@ -17,13 +17,14 @@ import Navigation from "../components/Navigation";
 import HeroSection from "../components/HeroSection";
 import CompaniesSection from "../components/CompaniesSection";
 import Footer from "../components/Footer";
-import ProductsBentoSection from "../components/ProductsBentoSection";
-import SolutionsBentoSection from "../components/SolutionsBentoSection";
-import ServicesBentoSection from "../components/ServicesBentoSection";
-import TestimonialsBentoSection from "../components/TestimonialsBentoSection";
+// import ProductsBentoSection from "../components/ProductsBentoSection";
+// import SolutionsBentoSection from "../components/SolutionsBentoSection";
+// import ServicesBentoSection from "../components/ServicesBentoSection";
+// import TestimonialsBentoSection from "../components/TestimonialsBentoSection";
 import { DialogOverlay } from '@radix-ui/react-dialog';
 import { CheckIcon, Phone, Mail } from 'lucide-react';
 import { Z_VERSION_ERROR } from 'node:zlib';
+import { MovingBorderButton } from "../components/ui/moving-border-button";
 
 const Index = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -100,30 +101,15 @@ const Index = () => {
     name: "Company 4",
     logo: "/lovable-uploads/L4.png"
   }, {
-    name: "Company 5",
-    logo: "/lovable-uploads/L5.png"
-  }, {
     name: "Company 6",
     logo: "/lovable-uploads/L6.png"
   }, {
     name: "Company 7",
     logo: "/lovable-uploads/L7.png"
   }, {
-    name: "Company 8",
-    logo: "/lovable-uploads/L8.png"
-  }, {
-    name: "Company 9",
-    logo: "/lovable-uploads/L9.png"
-  }, {
     name: "Company 10",
     logo: "/lovable-uploads/L10.png"
-  }, {
-    name: "Company 11",
-    logo: "/lovable-uploads/L11.png"
-  }, {
-    name: "Company 12",
-    logo: "/lovable-uploads/L12.png"
-  }];
+  },];
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,42 +127,71 @@ const Index = () => {
       {/* Get in touch section */}
       <section className="bg-gray-100 py-6">
         <div className="w-full">
-          <div className="relative max-w-[1920px] mx-auto px-4 md:px-6">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full space-y-4 md:space-y-0">
-              {/* Left Text Block - Extreme Left */}
+          <div className="px-12">
+            <div className="flex flex-col md:flex-row items-start gap-6 md:gap-10">
+              {/* Left Text Block */}
               <div className="flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800">Get sales and product support</h3>
-                <p className="text-sm md:text-base text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-1.5">Get sales and product support</h3>
+                <p className="text-base text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
               </div>
 
-              {/* Vertical Separator - Desktop Only */}
-              <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
-
-              {/* Center Block */}
-              <div className="flex-shrink-0">
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-blue-600 mr-2" />
-                  <span className="text-lg md:text-xl font-bold text-gray-800">1800 209 6070</span>
+              {/* Phone Block - Sales */}
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-50 p-3 rounded-full">
+                  <Phone className="h-6 w-6 text-blue-600" />
                 </div>
-                <p className="text-xs md:text-sm text-gray-500 pl-7">Call us for inquiries or support</p>
+                <div>
+                  <p className="text-base text-gray-600 mb-0.5">Sales</p>
+                  <span className="text-2xl font-bold text-gray-800">1800 209 6070</span>
+                </div>
               </div>
 
-              {/* Vertical Separator - Desktop Only */}
-              <div className="hidden md:block w-px h-12 bg-gray-200 mx-8 self-center"></div>
-
-              {/* Email Buttons - Extreme Right */}
-              <div className="w-full md:w-auto">
-                <div className="flex flex-row gap-2 justify-start">
-                  <Button variant="default" size="sm" className="flex-1 md:flex-none bg-blue-600 hover:bg-blue-700 text-white text-sm">
-                    📩 Email Sales
-                  </Button>
-                  <Button variant="default" size="sm" className="flex-1 md:flex-none bg-gray-700 hover:bg-gray-800 text-white text-sm">
-                    🛠️ Email Support
-                  </Button>
+              {/* Phone Block - Support */}
+              <div className="flex items-center gap-4">
+                <div className="bg-blue-50 p-3 rounded-full">
+                  <Phone className="h-6 w-6 text-blue-600" />
                 </div>
-                <div className="flex justify-between text-xs text-gray-500 mt-1">
-                  <span>For pricing and demos</span>
-                  <span>For technical support</span>
+                <div>
+                  <p className="text-base text-gray-600 mb-0.5">Support</p>
+                  <span className="text-2xl font-bold text-gray-800">1800 209 8070</span>
+                </div>
+              </div>
+
+              {/* Vertical Separator */}
+              <div className="hidden md:block w-px h-16 bg-gray-300 mx-6"></div>
+
+              {/* Email Buttons */}
+              <div className="flex flex-col md:flex-row gap-3">
+                <div className="flex items-center gap-4">
+                  <div className="bg-blue-50 p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <MovingBorderButton
+                    containerClassName="w-[200px]"
+                    borderClassName="bg-[radial-gradient(#3b82f6_40%,transparent_60%)]"
+                    className="bg-white/[0.8] text-slate-900 border-slate-200 font-medium text-lg py-3.5"
+                  >
+                    <span>Sales</span>
+                  </MovingBorderButton>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="bg-blue-50 p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <MovingBorderButton
+                    containerClassName="w-[200px]"
+                    borderClassName="bg-[radial-gradient(#6366f1_40%,transparent_60%)]"
+                    className="bg-white/[0.8] text-slate-900 border-slate-200 font-medium text-lg py-3.5"
+                  >
+                    <span>Support</span>
+                  </MovingBorderButton>
                 </div>
               </div>
             </div>
@@ -188,24 +203,33 @@ const Index = () => {
       <CompaniesSection companies={companies} />
       
       {/* Products Bento Grid Section */}
-      <ProductsBentoSection />
+      {/* <ProductsBentoSection /> */}
       
       {/* Solutions Bento Grid Section */}
-      <SolutionsBentoSection />
+      {/* <SolutionsBentoSection /> */}
       
       {/* Services Bento Grid Section */}
-      <ServicesBentoSection />
+      {/* <ServicesBentoSection /> */}
       
       {/* Testimonials Section */}
-      <TestimonialsBentoSection />
+      {/* <TestimonialsBentoSection /> */}
       
       {/* Footer */}
       <Footer />
 
       {/* Book a Call Dialog */}
       <Sheet open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-xl p-0 overflow-hidden">
-          <div className="flex flex-col lg:flex-row h-full">
+        <SheetContent
+          side="right"
+          className="fixed inset-y-0 right-0 w-full sm:max-w-xl h-full bg-white shadow-xl !bg-white !backdrop-blur-0 !backdrop-filter-none"
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'translateZ(0)',
+            isolation: 'isolate'
+          }}
+        >
+          <div className="flex flex-col lg:flex-row h-full bg-white">
             {/* Left side: Form */}
             <div className="w-full lg:w-1/3 p-8 bg-white overflow-y-auto border-r border-gray-200">
               <SheetHeader className="mb-6">
