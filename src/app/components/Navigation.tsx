@@ -288,13 +288,13 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
           </button>
         </div>
         
-        <div className="overflow-y-auto h-[calc(100vh-5rem)]">
+        <div className="overflow-y-auto h-[calc(100vh-5rem)] bg-white">
           <div className="flex flex-col divide-y divide-gray-200">
             {/* Products Dropdown */}
             <div className="border-b border-gray-200">
               <button 
                 onClick={() => toggleMobileSection('products')}
-                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium"
+                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium bg-white"
               >
                 <span>Products</span>
                 <ChevronDown className={`h-4 w-4 transition-transform ${mobileSectionOpen === 'products' ? 'rotate-180' : ''}`} />
@@ -303,11 +303,11 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'products' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="divide-y divide-gray-200">
                     {productCategories.slice(0, 4).map((category, index) => (
-                      <a key={index} href="#" className="bg-white rounded-lg p-3 shadow-sm hover:shadow transition-shadow">
-                        <h4 className="font-medium text-gray-900 text-sm">{category.name}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{category.description}</p>
+                      <a key={index} href="#" className="flex flex-col p-3 hover:bg-gray-100 rounded-lg transition-colors">
+                        <h4 className="font-medium text-gray-900">{category.name}</h4>
+                        <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
                   </div>
@@ -319,7 +319,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             <div className="border-b border-gray-200">
               <button 
                 onClick={() => toggleMobileSection('services')}
-                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium"
+                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium bg-white"
               >
                 <span>Services</span>
                 <ChevronDown className={`h-4 w-4 transition-transform ${mobileSectionOpen === 'services' ? 'rotate-180' : ''}`} />
@@ -328,14 +328,10 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'services' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                  <div className="divide-y divide-gray-200">
                     {serviceCategories.map((category, index) => (
-                      <a 
-                        key={index} 
-                        href="#" 
-                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
-                      >
-                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                      <a key={index} href="#" className="flex flex-col p-3 hover:bg-gray-100 rounded-lg transition-colors">
+                        <h4 className="font-medium text-gray-900">{category.name}</h4>
                         <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
@@ -348,7 +344,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             <div className="border-b border-gray-200">
               <button 
                 onClick={() => toggleMobileSection('solutions')}
-                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium"
+                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium bg-white"
               >
                 <span>Solutions</span>
                 <ChevronDown className={`h-4 w-4 transition-transform ${mobileSectionOpen === 'solutions' ? 'rotate-180' : ''}`} />
@@ -357,14 +353,10 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'solutions' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                  <div className="divide-y divide-gray-200">
                     {solutionCategories.map((category, index) => (
-                      <a 
-                        key={index} 
-                        href="#" 
-                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
-                      >
-                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                      <a key={index} href="#" className="flex flex-col p-3 hover:bg-gray-100 rounded-lg transition-colors">
+                        <h4 className="font-medium text-gray-900">{category.name}</h4>
                         <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
@@ -377,7 +369,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
             <div className="border-b border-gray-200">
               <button 
                 onClick={() => toggleMobileSection('company')}
-                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium"
+                className="w-full px-6 py-4 flex justify-between items-center text-gray-800 font-medium bg-white"
               >
                 <span>Company</span>
                 <ChevronDown className={`h-4 w-4 transition-transform ${mobileSectionOpen === 'company' ? 'rotate-180' : ''}`} />
@@ -386,14 +378,10 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out
                 ${mobileSectionOpen === 'company' ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="p-4">
-                  <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                  <div className="divide-y divide-gray-200">
                     {companyCategories.map((category, index) => (
-                      <a 
-                        key={index} 
-                        href="#" 
-                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors group"
-                      >
-                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{category.name}</h4>
+                      <a key={index} href="#" className="flex flex-col p-3 hover:bg-gray-100 rounded-lg transition-colors">
+                        <h4 className="font-medium text-gray-900">{category.name}</h4>
                         <p className="text-sm text-gray-600">{category.description}</p>
                       </a>
                     ))}
@@ -402,12 +390,12 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
               </div>
             </div>
             
-            <a href="#resources" className="px-6 py-4 text-gray-800 font-medium">
+            <a href="#resources" className="px-6 py-4 text-gray-800 font-medium bg-white block w-full">
               Resources
             </a>
             
             {/* CTA Buttons */}
-            <div className="px-6 py-4 mt-auto">
+            <div className="px-6 py-4 mt-auto bg-white">
               <div className="grid gap-3">
                 <Sheet open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <SheetTrigger asChild>

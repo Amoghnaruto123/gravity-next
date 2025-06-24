@@ -161,37 +161,25 @@ const Index = () => {
               <div className="hidden md:block w-px h-16 bg-gray-300 mx-6"></div>
 
               {/* Email Buttons */}
-              <div className="flex flex-col md:flex-row gap-3">
+              <div className="flex flex-col flex-center md:flex-row gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 p-3 rounded-full">
+                  <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                  </div>
-                  <MovingBorderButton
-                    containerClassName="w-[200px]"
-                    borderClassName="bg-[radial-gradient(#3b82f6_40%,transparent_60%)]"
-                    className="bg-white/[0.8] text-slate-900 border-slate-200 font-medium text-lg py-3.5"
-                  >
-                    <span>Sales</span>
-                  </MovingBorderButton>
+                  </button>
+                  <span className="text-xl font-semibold text-gray-900">Contact Sales</span>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 p-3 rounded-full">
+                  <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                  </div>
-                  <MovingBorderButton
-                    containerClassName="w-[200px]"
-                    borderClassName="bg-[radial-gradient(#6366f1_40%,transparent_60%)]"
-                    className="bg-white/[0.8] text-slate-900 border-slate-200 font-medium text-lg py-3.5"
-                  >
-                    <span>Support</span>
-                  </MovingBorderButton>
+                  </button>
+                  <span className="text-xl font-semibold text-gray-900">Contact Support</span>
                 </div>
               </div>
             </div>
@@ -219,16 +207,7 @@ const Index = () => {
 
       {/* Book a Call Dialog */}
       <Sheet open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <SheetContent
-          side="right"
-          className="fixed inset-y-0 right-0 w-full sm:max-w-xl h-full bg-white shadow-xl !bg-white !backdrop-blur-0 !backdrop-filter-none"
-          style={{
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-            transform: 'translateZ(0)',
-            isolation: 'isolate'
-          }}
-        >
+        <SheetContent side="right" className="w-full sm:max-w-xl p-0 overflow-hidden bg-white">
           <div className="flex flex-col lg:flex-row h-full bg-white">
             {/* Left side: Form */}
             <div className="w-full lg:w-1/3 p-8 bg-white overflow-y-auto border-r border-gray-200">
