@@ -266,7 +266,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
 
       {/* Mobile Menu Overlay - Background */}
       <div
-        className={`fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden
+        className={`fixed inset-0 bg-black/30 backdrop-blur-sm z-60 transition-opacity duration-300 lg:hidden
           ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
@@ -274,7 +274,7 @@ const Navigation = ({ isDialogOpen, setIsDialogOpen, form, onSubmit }: Navigatio
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden
+        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-xl z-[70] transform transition-transform duration-300 ease-in-out lg:hidden
           ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex justify-between items-center h-20 px-6 border-b border-gray-200">

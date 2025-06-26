@@ -25,6 +25,9 @@ import { DialogOverlay } from '@radix-ui/react-dialog';
 import { CheckIcon, Phone, Mail } from 'lucide-react';
 import { Z_VERSION_ERROR } from 'node:zlib';
 import { MovingBorderButton } from "../components/ui/moving-border-button";
+import { HorizontalScrollSection } from "@/app/components/HorizontalScrollSection";
+import ResourcesSection from "@/app/components/ResourcesSection";
+import { productsData, servicesData, solutionsData, resourcesData } from "@/app/data/sectionData";
 
 const Index = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -189,6 +192,30 @@ const Index = () => {
 
       {/* Companies Section with scrolling logos */}
       <CompaniesSection companies={companies} />
+      
+      {/* Products Section */}
+      <HorizontalScrollSection
+        title="Products"
+        subtitle="Innovative solutions designed to scale with your business needs"
+        items={productsData}
+      />
+      
+      {/* Services Section */}
+      <HorizontalScrollSection
+        title="Services"
+        subtitle="Expert consulting and support to maximize your potential"
+        items={servicesData}
+      />
+      
+      {/* Solutions Section */}
+      <HorizontalScrollSection
+        title="Solutions"
+        subtitle="Comprehensive packages tailored to your industry requirements"
+        items={solutionsData}
+      />
+      
+      {/* Resources Section */}
+      <ResourcesSection />
       
       {/* Products Bento Grid Section */}
       {/* <ProductsBentoSection /> */}

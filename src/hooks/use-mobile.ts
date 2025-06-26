@@ -1,10 +1,19 @@
-import { useMediaQuery } from "usehooks-ts";
+import * as React from "react"
 
-/**
- * Hook to determine if the current viewport is mobile size
- * @returns boolean indicating if the viewport is mobile size
- */
-export function useIsMobile(): boolean {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  return isMobile;
+const MOBILE_BREAKPOINT = 768
+
+export function useIsMobile() {
+  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+
+  React.useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
+    const onChange = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    }
+    mql.addEventListener("change", onChange)
+    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    return () => mql.removeEventListener("change", onChange)
+  }, [])
+
+  return !!isMobile
 } 
