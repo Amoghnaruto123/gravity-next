@@ -29,6 +29,9 @@ import { HorizontalScrollSection } from "@/app/components/HorizontalScrollSectio
 import ResourcesSection from "@/app/components/ResourcesSection";
 import { productsData, servicesData, solutionsData, resourcesData } from "@/app/data/sectionData";
 
+// Flag to control which sections are visible
+const SHOW_MINIMAL_SECTIONS = true;
+
 const Index = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -128,117 +131,120 @@ const Index = () => {
       <HeroSection openBookCallDialog={() => setIsDialogOpen(true)} />
 
       {/* Get in touch section */}
-      <section className="bg-gray-100 py-6">
-        <div className="w-full">
-          <div className="px-12">
-            <div className="flex flex-col md:flex-row items-start gap-6 md:gap-10">
-              {/* Left Text Block */}
-              <div className="flex-shrink-0">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-1.5">Get sales and product support</h3>
-                <p className="text-base text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
-              </div>
-
-              {/* Phone Block - Sales */}
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-50 p-3 rounded-full">
-                  <Phone className="h-6 w-6 text-blue-600" />
+      {!SHOW_MINIMAL_SECTIONS && (
+        <section className="bg-gray-100 py-6">
+          <div className="w-full">
+            <div className="px-12">
+              <div className="flex flex-col md:flex-row items-start gap-6 md:gap-10">
+                {/* Left Text Block */}
+                <div className="flex-shrink-0">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-1.5">Get sales and product support</h3>
+                  <p className="text-base text-gray-600">Available 9:00 AM – 6:00 PM, Mon – Sat</p>
                 </div>
-                <div>
-                  <p className="text-base text-gray-600 mb-0.5">Sales</p>
-                  <span className="text-2xl font-bold text-gray-800">1800 209 6070</span>
-                </div>
-              </div>
 
-              {/* Phone Block - Support */}
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-50 p-3 rounded-full">
-                  <Phone className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-base text-gray-600 mb-0.5">Support</p>
-                  <span className="text-2xl font-bold text-gray-800">1800 209 8070</span>
-                </div>
-              </div>
-
-              {/* Vertical Separator */}
-              <div className="hidden md:block w-px h-16 bg-gray-300 mx-6"></div>
-
-              {/* Email Buttons */}
-              <div className="flex flex-col flex-center md:flex-row gap-6">
+                {/* Phone Block - Sales */}
                 <div className="flex items-center gap-4">
-                  <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </button>
-                  <span className="text-xl font-semibold text-gray-900">Contact Sales</span>
+                  <div className="bg-blue-50 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-base text-gray-600 mb-0.5">Sales</p>
+                    <span className="text-2xl font-bold text-gray-800">1800 209 6070</span>
+                  </div>
                 </div>
 
+                {/* Phone Block - Support */}
                 <div className="flex items-center gap-4">
-                  <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </button>
-                  <span className="text-xl font-semibold text-gray-900">Contact Support</span>
+                  <div className="bg-blue-50 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-base text-gray-600 mb-0.5">Support</p>
+                    <span className="text-2xl font-bold text-gray-800">1800 209 8070</span>
+                  </div>
+                </div>
+
+                {/* Vertical Separator */}
+                <div className="hidden md:block w-px h-16 bg-gray-300 mx-6"></div>
+
+                {/* Email Buttons */}
+                <div className="flex flex-col flex-center md:flex-row gap-6">
+                  <div className="flex items-center gap-4">
+                    <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </button>
+                    <span className="text-xl font-semibold text-gray-900">Contact Sales</span>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <button className="bg-blue-50 p-5 rounded-full hover:bg-blue-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </button>
+                    <span className="text-xl font-semibold text-gray-900">Contact Support</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Companies Section with scrolling logos */}
       <CompaniesSection companies={companies} />
       
       {/* Products Section */}
-      <HorizontalScrollSection
-        title="Products"
-        subtitle="Innovative solutions designed to scale with your business needs"
-        items={productsData}
-      />
+      {!SHOW_MINIMAL_SECTIONS && (
+        <HorizontalScrollSection
+          title="Products"
+          subtitle="Innovative solutions designed to scale with your business needs"
+          items={productsData}
+        />
+      )}
       
       {/* Services Section */}
-      <HorizontalScrollSection
-        title="Services"
-        subtitle="Expert consulting and support to maximize your potential"
-        items={servicesData}
-      />
+      {!SHOW_MINIMAL_SECTIONS && (
+        <HorizontalScrollSection
+          title="Services"
+          subtitle="Expert consulting and support to maximize your potential"
+          items={servicesData}
+        />
+      )}
       
       {/* Solutions Section */}
-      <HorizontalScrollSection
-        title="Solutions"
-        subtitle="Comprehensive packages tailored to your industry requirements"
-        items={solutionsData}
-      />
+      {!SHOW_MINIMAL_SECTIONS && (
+        <HorizontalScrollSection
+          title="Solutions"
+          subtitle="Comprehensive packages tailored to your industry requirements"
+          items={solutionsData}
+        />
+      )}
       
       {/* Resources Section */}
-      <ResourcesSection />
-      
-      {/* Products Bento Grid Section */}
-      {/* <ProductsBentoSection /> */}
-      
-      {/* Solutions Bento Grid Section */}
-      {/* <SolutionsBentoSection /> */}
-      
-      {/* Services Bento Grid Section */}
-      {/* <ServicesBentoSection /> */}
-      
-      {/* Testimonials Section */}
-      {/* <TestimonialsBentoSection /> */}
+      {!SHOW_MINIMAL_SECTIONS && <ResourcesSection />}
       
       {/* Footer */}
       <Footer />
 
       {/* Book a Call Dialog */}
-      <Sheet open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-xl p-0 overflow-hidden bg-white">
+      <Sheet open={isDialogOpen} onOpenChange={(open) => {
+        // If closing, trigger the state change immediately
+        if (!open) {
+          setIsDialogOpen(false);
+        } else {
+          setIsDialogOpen(true);
+        }
+      }}>
+        <SheetContent side="right" className="w-full sm:max-w-xl p-0 overflow-hidden bg-white transition-all ease-in-out">
           <div className="flex flex-col lg:flex-row h-full bg-white">
             {/* Left side: Form */}
-            <div className="w-full lg:w-1/3 p-8 bg-white overflow-y-auto border-r border-gray-200">
-              <SheetHeader className="mb-6">
+            <div className="w-full lg:w-full p-8 bg-white overflow-y-auto">
+              <SheetHeader className="text-center sm:text-left mb-6">
                 <SheetTitle className="text-2xl font-bold text-gray-900 mb-2">Book a CallBack</SheetTitle>
                 <p className="text-gray-600">Get expert consultation for your IT infrastructure needs</p>
               </SheetHeader>
@@ -262,11 +268,11 @@ const Index = () => {
                       control={form.control}
                       name="category"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Category</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Category</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger>
+                              <SelectTrigger className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm">
                                 <SelectValue placeholder="Select a category" />
                               </SelectTrigger>
                             </FormControl>
@@ -286,13 +292,13 @@ const Index = () => {
                       control={form.control}
                       name="name"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Full Name</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="Enter your full name" 
                               {...field} 
-                              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                              className="flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                             />
                           </FormControl>
                           <FormMessage />
@@ -304,13 +310,13 @@ const Index = () => {
                       control={form.control}
                       name="company"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Company Name</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Company Name</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="Enter your company name" 
                               {...field} 
-                              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                              className="flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                             />
                           </FormControl>
                           <FormMessage />
@@ -322,14 +328,14 @@ const Index = () => {
                       control={form.control}
                       name="email"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Email</FormLabel>
                           <FormControl>
                             <Input 
                               type="email" 
                               placeholder="Enter your email" 
                               {...field} 
-                              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                              className="flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                             />
                           </FormControl>
                           <FormMessage />
@@ -341,14 +347,14 @@ const Index = () => {
                       control={form.control}
                       name="phone"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Phone Number</FormLabel>
                           <FormControl>
                             <Input 
                               type="tel" 
                               placeholder="Enter your phone number" 
                               {...field} 
-                              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                              className="flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                             />
                           </FormControl>
                           <FormMessage />
@@ -360,13 +366,13 @@ const Index = () => {
                       control={form.control}
                       name="note"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Note</FormLabel>
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-sm font-medium leading-none">Note</FormLabel>
                           <FormControl>
                             <Textarea 
                               placeholder="Tell us about your requirements..." 
                               {...field} 
-                              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                              className="flex min-h-[80px] w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                             />
                           </FormControl>
                           <FormMessage />
@@ -376,7 +382,7 @@ const Index = () => {
                     
                     <Button 
                       type="submit" 
-                      className="w-full py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 ease-in-out"
+                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-10 px-4 w-full py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 ease-in-out"
                     >
                       Schedule Consultation
                     </Button>

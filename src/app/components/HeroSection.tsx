@@ -136,8 +136,8 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
           <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'} -mt-20`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
               <div className="flex items-center">
-                <span className="text-blue-600">{displayText}</span>
-                <span className={`text-blue-600 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
+                <span className="text-orange-500">{displayText}</span>
+                <span className={`text-orange-500 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
               </div>
               <div>INFRASTRUCTURE FOR MODERN INDUSTRIES</div>
             </h1>
@@ -146,13 +146,13 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                className="bg-blue-600 hover:bg-blue-900 text-white border-none px-8 py-2 h-11 font-medium w-[180px] text-base"
+                className="bg-orange-500 hover:bg-orange-600 text-white border-none px-8 py-2 h-11 font-medium w-[180px] text-base"
                 onClick={openBookCallDialog}
               >
                 Book a Callback
               </Button>
               <Button 
-                className="group bg-transparent border border-white text-white px-8 py-2 h-11 font-medium w-[180px] text-base transition-colors flex items-center justify-center gap-2"
+                className="group bg-transparent border border-orange-500 text-orange-500 hover:bg-orange-600 hover:text-white px-8 py-2 h-11 font-medium w-[180px] text-base transition-colors flex items-center justify-center gap-2"
               >
                 Learn More 
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
