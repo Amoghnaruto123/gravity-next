@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { Toaster } from "@/app/components/ui/toaster";
 import { Toaster as Sonner } from "@/app/components/ui/sonner";
 import { TooltipProvider } from "@/app/components/ui/tooltip";
 import "./globals.css";
 import QueryProvider from "@/app/components/QueryProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gravity App",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={openSans.className}>
         <QueryProvider>
           <TooltipProvider>
             <Toaster />

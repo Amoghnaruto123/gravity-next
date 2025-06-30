@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="bg-[#F3F6FB] text-gray-800 pt-10 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12">
-          {/* Company Info */}
-          <div className="md:col-span-4">
-            <div className="flex items-center space-x-3 mb-6">
+          {/* Company Info - Adjusted to be more to the left */}
+          <div className="md:col-span-3 md:pr-8 pl-0">
+            <div className="flex items-center mb-6">
               <img src="/lovable-uploads/8c79cb12-2bc2-4bcd-95a4-8e82d3f4035f.png" alt="Gravity India Technologies" className="h-10 w-auto" />
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -24,9 +24,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-900 text-base mb-4" style={{ fontFamily: 'Microsoft JhengHei' }}>Services</h4>
+          {/* Services - Equal spacing */}
+          <div className="md:col-span-2 md:px-4 md:ml-2">
+            <h4 className="font-semibold text-gray-900 text-base mb-4">Services</h4>
             <ul className="space-y-3 text-gray-600">
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">Data Center Solutions</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">Power & UPS Systems</a></li>
@@ -36,9 +36,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-900 text-base mb-4" style={{ fontFamily: 'Microsoft JhengHei' }}>Company</h4>
+          {/* Company - Equal spacing */}
+          <div className="md:col-span-2 md:px-4 md:mx-auto">
+            <h4 className="font-semibold text-gray-900 text-base mb-4">Company</h4>
             <ul className="space-y-3 text-gray-600">
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">About Us</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">Leadership</a></li>
@@ -48,9 +48,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
-          <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-900 text-base mb-4" style={{ fontFamily: 'Microsoft JhengHei' }}>Support</h4>
+          {/* Support - Equal spacing */}
+          <div className="md:col-span-2 md:px-4 md:mx-auto">
+            <h4 className="font-semibold text-gray-900 text-base mb-4">Support</h4>
             <ul className="space-y-3 text-gray-600">
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">24/7 Monitoring</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors font-medium">Technical Support</a></li>
@@ -60,18 +60,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-900 text-base mb-4" style={{ fontFamily: 'Microsoft JhengHei' }}>Contact</h4>
+          {/* Contact - Fixed mobile number display */}
+          <div className="md:col-span-2 md:px-4 md:mr-2">
+            <h4 className="font-semibold text-gray-900 text-base mb-4">Contact</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3 group">
-                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors flex-shrink-0">
                   <Phone className="h-5 w-5 text-blue-600" />
                 </div>
-                <span className="text-gray-600 font-medium">+91 9886710105</span>
+                <span className="text-gray-600 font-medium whitespace-nowrap">+91 9886710105</span>
               </div>
               <div className="flex items-center space-x-3 group">
-                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors flex-shrink-0">
                   <Mail className="h-5 w-5 text-blue-600" />
                 </div>
                 <span className="text-gray-600 font-medium">marcom@gravityindia.com</span>

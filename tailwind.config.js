@@ -60,7 +60,7 @@ module.exports = {
         }
       },
       animation: {
-        'marquee-x': 'marquee-x 15s linear infinite',
+        'marquee-x': 'marquee-x 40s linear infinite',
         'marquee-x-mobile': 'marquee-x 10s linear infinite'
       }
     },

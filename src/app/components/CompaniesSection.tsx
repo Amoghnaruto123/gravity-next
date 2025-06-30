@@ -32,7 +32,7 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
 
     let animationFrameId: number;
     let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Pixels per frame - adjust for speed
+    const scrollSpeed = 1.5; // Increased from 0.5 to 1.2 for faster scrolling
     const totalWidth = scrollContainer.scrollWidth;
     const containerWidth = scrollContainer.clientWidth;
 
@@ -70,12 +70,12 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
   }, [companies.length]);
 
   return (
-    <section className="py-12 sm:py-16 bg-white border-y border-gray-200">
+    <section className="py-4 sm:py-6 bg-white border-y border-gray-200">
       {/* Add the styles to the document */}
       <style dangerouslySetInnerHTML={{ __html: scrollbarHideStyles }} />
       
       <div className="w-full">
-        <div className="text-center mb-10 sm:mb-12">
+        <div className="text-center mb-2">
           <h2 className="font-semibold text-gray-400 text-lg sm:text-xl animate-fade-in">
            
           </h2>
@@ -100,7 +100,7 @@ const CompaniesSection = ({ companies }: CompaniesSectionProps) => {
           {/* Scrolling container */}
           <div 
             ref={scrollRef}
-            className="overflow-x-auto py-6 relative logo-scroll-container w-full"
+            className="overflow-x-auto py-4 relative logo-scroll-container w-full"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             <div className="flex gap-4 sm:gap-6 whitespace-nowrap pl-24 pr-20">

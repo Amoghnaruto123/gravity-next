@@ -132,16 +132,16 @@ const HeroSection = ({ openBookCallDialog }: HeroSectionProps) => {
 
       {/* Content overlay */}
       <div className="relative z-20 w-full">
-        <div className="p-8 pt-0 md:p-12 md:pt-0 lg:p-0 lg:pt-0 flex flex-col justify-center h-[600px]">
+        <div className="p-8 pt-0 md:p-12 md:pt-0 lg:p-0 lg:pt-0 flex flex-col justify-center h-[560px]">
           <div className={`max-w-2xl animate-fade-in ${isMobile ? 'ml-auto pr-4' : 'pl-20'} -mt-20`}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white flex flex-col">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-white flex flex-col">
               <div className="flex items-center">
                 <span className="text-orange-500">{displayText}</span>
                 <span className={`text-orange-500 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
               </div>
               <div>INFRASTRUCTURE FOR MODERN INDUSTRIES</div>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-6">
               30+ Years of Expertise in Power Management, Infrastructure Development, and Auditing Services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
